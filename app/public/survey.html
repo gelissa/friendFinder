@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- GOOGLE FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Abril+Fatface|DM+Serif+Text|Monoton|Playfair+Display+SC|Shrikhand|Space+Mono&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT FAMILIES -->
+    <!-- ========================================== -->
+    <!-- font-family: 'Abril Fatface', cursive;
+        font-family: 'Playfair Display SC', serif;
+        font-family: 'Monoton', cursive;
+        font-family: 'Shrikhand', cursive;
+        font-family: 'Space Mono', monospace;
+        font-family: 'DM Serif Text', serif; -->
+    <!-- ========================================== -->
+
+    <!-- GOOGLE ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- <h1>SURVEY</h1>
+    <a href="/">Home</a>
+    <br>
+    <input type="text">First name</input>
+    <br>
+    <input type="text">Last name</input> -->
+    <div class="surveyContainer">
+        <div class="surveyHeader">
+            <h1>
+                Welcome to Friend Finder
+            </h1>
+            <h2>
+                Please complete the survey below to find your own special friend!
+                <!-- Below, you will complete a survey that uses an algorithm called 'Everything Nice', our proprietary code
+                that uses your data to pair you with the friend in your area. Be honest, enjoy yourself, and find the
+                friend of your dreams! -->
+
+            </h2>
+
+        </div>
+
+        <div class="questionContainer">
+
+            <form action="POST">
+
+                <!-- <label for="fname">First Name</label> -->
+                <h3>First Name (Required)</h1>
+                    <input type="text" class="fname" name="firstname">
+
+                    <br>
+
+                    <!-- <label for="fname">Link Photo Here</label> -->
+                    <h3>Link Photo Here (Required)</h1>
+                        <input type="text" class="link-to-image" name="firstname">
+
+                        <br>
+
+                        <div class="question question1">
+
+                            <h3>Question 1</h3>
+                            <h2>Your energy spikes when you're around other people</h2>
+                            <select class="chosen-select" id="q1">
+                                <option value="">Choose One</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+
+                        </div>
+                        <div class="question question2">
+
+                                <h3>Question 2</h3>
+                                <h2>You are concerned with how people perceive you</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+                        <div class="question question3">
+
+                                <h3>Question 3</h3>
+                                <h2>You are prepared for most interactions before they happen</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+                        <div class="question question4">
+
+                                <h3>Question 4</h3>
+                                <h2>You are able to relate easily to new people within one conversation</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+                        <div class="question question5">
+
+                                <h3>Question 5</h3>
+                                <h2>You gravitate towards high-risk situations</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+                        <div class="question question6">
+
+                                <h3>Question 6</h3>
+                                <h2>You are pragmatic about most situations</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+                        <div class="question question7">
+
+                                <h3>Question 7</h3>
+                                <h2>You value career over relationships, since friendships are easier to come by</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+                        <div class="question question8">
+
+                                <h3>Question 8</h3>
+                                <h2>You enjoy sports and other organized activities</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+                        <div class="question question9">
+
+                                <h3>Question 9</h3>
+                                <h2>You spend a lot of time with your family</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+                        <div class="question question10">
+
+                                <h3>Question 10</h3>
+                                <h2>You are accommodating of other's interests</h2>
+                                <select class="chosen-select" id="q1">
+                                    <option value="">Choose One</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+
+                        </div>
+
+                        <input type="submit" value="Submit" class="Submit" style="color: white">
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <!-- this is where you'll put the front-end JS -->
+    <script>
+
+
+    </script>
+</body>
+
+</html>
