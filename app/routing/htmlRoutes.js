@@ -15,7 +15,7 @@ module.exports = function(app){
     });
 
     app.get("*", function (req, res) {
-
+        // maybe insert a cute 404 page if i have time
     });
 };
 
