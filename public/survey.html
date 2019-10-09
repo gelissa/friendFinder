@@ -57,7 +57,7 @@
 
         <div class="questionContainer">
 
-            <form action="POST">
+            <form>
 
                 <!-- <label for="fname">First Name</label> -->
                 <h3>First Name (Required)</h1>
@@ -89,7 +89,7 @@
 
                             <h3>Question 2</h3>
                             <h2>You are concerned with how people perceive you</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q2">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -103,7 +103,7 @@
 
                             <h3>Question 3</h3>
                             <h2>You are prepared for most interactions before they happen</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q3">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -117,7 +117,7 @@
 
                             <h3>Question 4</h3>
                             <h2>You are able to relate easily to new people within one conversation</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q4">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -131,7 +131,7 @@
 
                             <h3>Question 5</h3>
                             <h2>You gravitate towards high-risk situations</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q5">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -145,7 +145,7 @@
 
                             <h3>Question 6</h3>
                             <h2>You are pragmatic about most situations</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q6">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -159,7 +159,7 @@
 
                             <h3>Question 7</h3>
                             <h2>You value career over relationships, since friendships are easier to come by</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q7">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -173,7 +173,7 @@
 
                             <h3>Question 8</h3>
                             <h2>You enjoy sports and other organized activities</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q8">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -187,7 +187,7 @@
 
                             <h3>Question 9</h3>
                             <h2>You spend a lot of time with your family</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q9">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -201,7 +201,7 @@
 
                             <h3>Question 10</h3>
                             <h2>You are accommodating of other's interests</h2>
-                            <select class="chosen-select" id="q1">
+                            <select class="chosen-select" id="q10">
                                 <option value="">Choose One</option>
                                 <option value="1">1 (Strongly Disagree)</option>
                                 <option value="2">2</option>
@@ -212,11 +212,11 @@
 
                         </div>
 
-                        <input type="submit" value="Submit" class="Submit" style="color: white" onclick="on()">
+                        <input type="submit" value="Submit" class="Submit" style="color: white">
 
             </form>
 
-            <div id="overlay" onclick="off()"><span class="match"></span></div>
+            <!-- <div id="overlay"><p>Your New Friend!</p><span class="match"></span></div> -->
 
         </div>
 
@@ -234,22 +234,73 @@
     <!-- this is where you'll put the front-end JS -->
     <script>
         // make an onclick (but right now it's in the html)
-        $("#Submit").on("click", function (event){
-             function on() {
-            document.getElementById("overlay").style.display = "block";
-        }
+        $(".Submit").on("click", function (event) {
 
-        function off() {
-            document.getElementById("overlay").style.display = "none";
-        }
+            event.preventDefault();
+            userResults = {
+                name: $(".fname").val().trim(),
+                photo: $(".link-to-image").val().trim(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            }
+            console.log(userResults)
+
+            $.ajax(
+                {
+                    url: "/api/friends",
+                    method: "POST",
+                    data: userResults
+                }
+            ).then (
+                function(res){
+                    console.log(res);
+                    var friendDiv = $("<div id='overlay'>");
+                    var p = $("<p>").text("You've Found A Friend! Meet " + res.name);
+                    var friendImage = $("<img>");
+
+                    friendImage.attr("src", res.photo);
+                    friendDiv.prepend(p);
+                    friendDiv.prepend(friendImage);
+                    $("#overlay").css("display", "block");
+
+                    $("body").append(friendDiv);
+
+                }
+            )
+        
+
+
+
+
+
+
+            //      function on() {
+            //     document.getElementById("overlay").style.display = "block";
+            // }
+
+            // function off() {
+            //     document.getElementById("overlay").style.display = "none";
+            // }
+
+            // on();
 
         })
 
         // convert this to jquery
 
-       
 
-        
+
+
 
     </script>
 </body>

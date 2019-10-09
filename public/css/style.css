@@ -169,6 +169,8 @@ input[type=submit] {
   
 input[type=submit]:hover {
     background-color: pink;
+    transition-duration: 0.25s;
+    
 }
 
 #overlay {
