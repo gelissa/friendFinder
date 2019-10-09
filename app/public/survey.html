@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- GOOGLE FONTS -->
@@ -208,9 +212,11 @@
 
                         </div>
 
-                        <input type="submit" value="Submit" class="Submit" style="color: white">
+                        <input type="submit" value="Submit" class="Submit" style="color: white" onclick="on()">
 
             </form>
+
+            <div id="overlay" onclick="off()"><span class="match"></span></div>
 
         </div>
 
@@ -218,14 +224,32 @@
     </div>
 
     <footer>
-        <a href="#" class="links">API Friends List</a>
+        <a href="../data/friends.js" class="links" target="_blank">API Friends List</a>
         <span style="color: white"> | </span>
-        <a href="https://github.com/gelissa/friendFinder" class="links">GitHub Repo</a>
+        <a href="https://github.com/gelissa/friendFinder" class="links" target="_blank">GitHub Repo</a>
+        <span style="color: white"> | </span>
+        <a href="../public/home.html" class="links">Home</a>
     </footer>
 
     <!-- this is where you'll put the front-end JS -->
     <script>
+        // make an onclick (but right now it's in the html)
+        $("#Submit").on("click", function (event){
+             function on() {
+            document.getElementById("overlay").style.display = "block";
+        }
 
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        })
+
+        // convert this to jquery
+
+       
+
+        
 
     </script>
 </body>

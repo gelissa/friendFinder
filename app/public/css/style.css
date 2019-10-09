@@ -56,7 +56,7 @@ button {
         width: 100px;
         height: 55px;
         margin: 10px auto;
-        background-color: rgb(204, 134, 145);;
+        background-color: rgb(204, 134, 145);
         border: 2px white solid;
         border-radius: 20px;
 }
@@ -165,8 +165,23 @@ input[type=text]:focus {
 input[type=submit] {
     width: 250px;
     display: block;
-  }
+}
   
-  input[type=submit]:hover {
+input[type=submit]:hover {
     background-color: pink;
-  }
+}
+
+#overlay {
+position: fixed; /* Sit on top of the page content */
+display: none; /* Hidden by default */
+width: 500px; /* Full width (cover the whole page) */
+height: 500px; /* Full height (cover the whole page) */
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgb(204, 134, 145, 0.5); /* pink background with opacity */
+z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+cursor: pointer; /* Add a pointer on hover */
+}
+
