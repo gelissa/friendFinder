@@ -265,15 +265,19 @@
                 function(res){
                     console.log(res);
                     var friendDiv = $("<div id='overlay'>");
-                    var p = $("<p>").text("You've Found A Friend! Meet " + res.name);
-                    var friendImage = $("<img>");
+                    var h3 = $("<h3>").text("You've Found A Friend! Meet " + res.name);
+                    var friendImage = $("<img id='friend-image'>");
 
                     friendImage.attr("src", res.photo);
-                    friendDiv.prepend(p);
                     friendDiv.prepend(friendImage);
+                    friendDiv.prepend(h3);
                     $("#overlay").css("display", "block");
 
                     $("body").append(friendDiv);
+
+                    $("#overlay").on("click", function(){
+                        $("#overlay").css("display", "none")
+                    })
 
                 }
             )
