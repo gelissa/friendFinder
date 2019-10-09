@@ -1,5 +1,6 @@
 // NEED AT LEAST 5-10 FRIENDS
 // an array of objects
+// friends from: https://www.cosmopolitan.com/uk/entertainment/g19715921/love-island-cast/?slide=29
 
 var friends = [
     {
@@ -161,7 +162,7 @@ var friends = [
             4,
             1
           ]
-      },
+      }
 
 
 
