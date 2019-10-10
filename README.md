@@ -27,6 +27,7 @@ Once the user has answered all the questions, a match is made! No need to open y
 
 # Links 
 
-* [GitHub]()
+* [Deployed GitHub](https://gelissa.github.io/friendFinder/)
+* [GitHub Repo](https://github.com/gelissa/friendFinder)
 * [Portfolio]()
 * [Heroku]()
